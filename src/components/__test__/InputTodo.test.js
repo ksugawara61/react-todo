@@ -1,5 +1,6 @@
-import { InputTodo } from "../InputTodo";
+import React from "react";
 import renderer from "react-test-renderer";
+import { InputTodo } from "../InputTodo";
 
 let testInstance = null;
 let todoText = "test";
