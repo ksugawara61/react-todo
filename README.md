@@ -9,5 +9,5 @@ npm start
 - How to test
 
 ```
-npm test src/components/__test__/InputTodo.test.js
+npm test -- --watchAll --coverage
 ```
