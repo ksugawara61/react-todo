@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import { jest } from "@jest/globals";
-import { InputTodo } from "../InputTodo";
+import { InputTodo } from "../../components/InputTodo";
 import placeholder from "../../lib/placeholder";
 
 let testInstance = null;
