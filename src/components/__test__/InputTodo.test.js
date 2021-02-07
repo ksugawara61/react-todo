@@ -1,20 +1,39 @@
 import React from "react";
 import renderer from "react-test-renderer";
+import { jest } from "@jest/globals";
 import { InputTodo } from "../InputTodo";
+import placeholder from "../../lib/placeholder";
 
 let testInstance = null;
 let todoText = "test";
 let disabled = true;
 
 beforeEach(() => {
-  testInstance = renderer.create(
+  const tree = renderer.create(
     <InputTodo
       todoText={todoText}
       onChange={() => {}}
       onClick={() => {}}
       disabled={disabled}
     />
-  ).root;
+  );
+  testInstance = tree.root;
+});
+
+it("input placeholder is TODOを入力", () => {
+  expect(testInstance.findByType("input").props.placeholder).toBe("TODOを入力");
+});
+
+describe("placeholderText method returns TODO", () => {
+  beforeAll(() => {
+    jest.spyOn(placeholder, "getText").mockImplementation(() => {
+      return "TODO";
+    });
+  });
+
+  it("input placeholder is TODO", () => {
+    expect(testInstance.findByType("input").props.placeholder).toBe("TODO");
+  });
 });
 
 describe("todoText is hello!", () => {

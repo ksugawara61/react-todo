@@ -1,4 +1,5 @@
 import React from "react";
+import placeholder from "../lib/placeholder";
 
 const style = {
   backgroundColor: "#c1ffff",
@@ -6,7 +7,7 @@ const style = {
   height: "30px",
   padding: "8px",
   margin: "8px",
-  borderRadius: "8px"
+  borderRadius: "8px",
 };
 
 export const InputTodo = (props) => {
@@ -15,7 +16,7 @@ export const InputTodo = (props) => {
     <div style={style}>
       <input
         disabled={disabled}
-        placeholder="TODOを入力"
+        placeholder={placeholder.getText()}
         value={todoText}
         onChange={onChange}
       />

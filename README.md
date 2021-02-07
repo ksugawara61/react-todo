@@ -9,5 +9,5 @@ npm start
 - How to test
 
 ```
-npm test -- --watchAll --coverage
+npm test
 ```
